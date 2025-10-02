@@ -4,15 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
-@Controller
+@RestController
 
 public class AlunoController {
+
 
 }
