@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Service
 public class AlunoService {
     @Autowired
      private AlunoRepository alunoRepository;
