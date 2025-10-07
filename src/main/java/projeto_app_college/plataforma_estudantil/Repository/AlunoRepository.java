@@ -1,7 +1,6 @@
-package Repository;
+package projeto_app_college.plataforma_estudantil.Repository;
 
-import Entities.AlunoEntity;
-import Entities.UsuarioEntity;
+import projeto_app_college.plataforma_estudantil.Entities.AlunoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

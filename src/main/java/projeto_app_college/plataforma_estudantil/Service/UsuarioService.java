@@ -1,8 +1,9 @@
-package Service;
+package projeto_app_college.plataforma_estudantil.Service;
 
 
-import Entities.UsuarioEntity;
-import Repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import projeto_app_college.plataforma_estudantil.Entities.UsuarioEntity;
+import projeto_app_college.plataforma_estudantil.Repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @Service
 public class UsuarioService {
+    @Autowired
     private UsuarioRepository usuarioRepository;
 
     public UsuarioEntity criarUsuario(UsuarioEntity usuario){
@@ -38,7 +40,7 @@ public class UsuarioService {
         return usuarioRepository.findByNomeContainingIgnoreCase(nome);
     }
 
-    public Optional<UsuarioEntity> bucsarPorEmail(String email){
+    public Optional<UsuarioEntity> buscarPorEmail(String email){
         return usuarioRepository.findByEmail(email);
     }
     public UsuarioEntity atualizarUsuario(Long id, UsuarioEntity novosDados) {

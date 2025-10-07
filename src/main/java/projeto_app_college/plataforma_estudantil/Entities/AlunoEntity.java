@@ -1,4 +1,4 @@
-package Entities;
+package projeto_app_college.plataforma_estudantil.Entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,14 +16,19 @@ public class AlunoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Matricula")
     private Long id;
-    @Column(name = "Nome do Aluno")
+
+    @Column(name = "nome_aluno", nullable = false)
     private String nome;
-    @Column(name = "Classe")
+
+    @Column(name = "classe")
     private String classe;
 
     @OneToOne
-    @JoinColumn(name = "usuarios_id")
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     private UsuarioEntity usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private ProfessorEntity professor;
 }

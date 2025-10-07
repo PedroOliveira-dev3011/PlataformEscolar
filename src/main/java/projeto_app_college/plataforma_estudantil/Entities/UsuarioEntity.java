@@ -1,4 +1,4 @@
-package Entities;
+package projeto_app_college.plataforma_estudantil.Entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,23 +17,27 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_usuario")
+    @Column(name = "nome_usuario", nullable = false)
     private String nome;
+
     @Column(name = "sobrenome_usuario")
     private String sobrenome;
-    @Column(name = "email_usuario")
+
+    @Column(name = "email_usuario", unique = true)
     private String email;
+
     @Column(name = "senha_usuario")
     private String senha;
+
     @Column(name = "cep_usuario")
     private String cep;
+
     @Column(name = "tel_usuario")
     private String telefone;
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private ProfessorEntity professor;
-
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private AlunoEntity aluno;
 
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private ProfessorEntity professor;
 }
